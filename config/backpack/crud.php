@@ -34,7 +34,7 @@ return [
         // How many items should be shown by default by the Datatable?
         // This value can be overwritten on a specific CRUD by calling
         // $this->crud->setDefaultPageLength(50);
-        'default_page_length' => 25,
+        'default_page_length' => 50,
 
     // PREVIEW
 
@@ -62,7 +62,7 @@ return [
     |-------------------
     */
 
-    'show_translatable_field_icon'     => true,
+    'show_translatable_field_icon'     => false,
     'translatable_field_icon_position' => 'right', // left or right
 
     'locales' => [
@@ -226,7 +226,7 @@ return [
         // "fr_SN" => "French (Senegal)",
         // "fr_CH" => "French (Switzerland)",
         // "fr_TG" => "French (Togo)",
-        'fr' => 'French',
+        //'fr' => 'French',
         // "ff_SN" => "Fulah (Senegal)",
         // "ff" => "Fulah",
         // "gl_ES" => "Galician (Spain)",
@@ -272,7 +272,7 @@ return [
         // "ga" => "Irish",
         // "it_IT" => "Italian (Italy)",
         // "it_CH" => "Italian (Switzerland)",
-        'it' => 'Italian',
+        //'it' => 'Italian',
         // "ja_JP" => "Japanese (Japan)",
         // "ja" => "Japanese",
         // "kea_CV" => "Kabuverdianu (Cape Verde)",
@@ -377,7 +377,7 @@ return [
         // "pa" => "Punjabi",
         // "ro_MD" => "Romanian (Moldova)",
         // "ro_RO" => "Romanian (Romania)",
-        'ro' => 'Romanian',
+        //'ro' => 'Romanian',
         // "rm_CH" => "Romansh (Switzerland)",
         // "rm" => "Romansh",
         // "rof_TZ" => "Rombo (Tanzania)",
