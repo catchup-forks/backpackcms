@@ -4,18 +4,30 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.3.*",
+        "backpack/MenuCRUD": "^1.0",
+        "backpack/backupmanager": "^1.1",
         "backpack/base": "^0.7.0",
         "backpack/crud": "^3.2.0",
-        "backpack/backupmanager": "^1.1",
         "backpack/logmanager": "^2.3",
-        "backpack/settings": "^2.0",
-        "backpack/pagemanager": "^1.1",
-        "backpack/MenuCRUD": "^1.0",
         "backpack/newscrud": "^2.1",
-        "backpack/permissionmanager": "^2.1"
+        "backpack/pagemanager": "^1.1",
+        "backpack/permissionmanager": "^2.1",
+        "backpack/settings": "^2.0",
+        "caffeinated/modules": "^4.0",
+        "caffeinated/themes": "^3.0",
+        "cviebrock/eloquent-sluggable": "^3.1",
+        "doctrine/dbal": "^2.5",
+        "filp/whoops": "^2.0",
+        "laravel/framework": "5.3.*",
+        "wikimedia/composer-merge-plugin": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -24,8 +36,28 @@
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
         "laracasts/generators": "^1.1",
-        "backpack/generators": "^1.1"
+        "backpack/generators": "^1.1",
+    "barryvdh/laravel-ide-helper": "^2.1",
+    "barryvdh/laravel-debugbar": "^2.0"
     },
+  "extra": {
+    "merge-plugin": {
+      "include": [
+        "app/Modules/*/composer.json"
+      ]
+    },
+    "installer-paths": {
+      "App/Modules/{$name}": [
+        "rakko/core",
+        "rakko/origami",
+        "rakko/kantoku",
+        "rakko/menus",
+        "rakko/kagi"
+      ],
+      "resources/themes/{$name}": [
+      ]
+    }
+  },
     "autoload": {
         "classmap": [
             "database"
@@ -52,10 +84,9 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
             "php artisan optimize"
         ]
-    },
-    "config": {
-        "preferred-install": "dist"
     }
 }

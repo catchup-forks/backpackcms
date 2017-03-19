@@ -157,6 +157,14 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        /*
+         * Development Service Providers...
+         */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+
         /*
         * Backpack Service Providers...
         */
@@ -171,12 +179,29 @@ return [
         Backpack\Settings\SettingsServiceProvider::class,
         Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\MenuCRUD\MenuCRUDServiceProvider::class,
-        Backpack\NewsCRUD\NewsCRUDServiceProvider::class,
+
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
 
         /*
         * Other Service Providers...
         */
+        //Illuminate3\Kotoba\KotobaServiceProvider::class,
+        //Caffeinated\Flash\FlashServiceProvider::class,
+        //Caffeinated\Modules\ModulesServiceProvider::class,
+        //Caffeinated\Plugins\PluginsServiceProvider::class,
+        Caffeinated\Themes\ThemesServiceProvider::class,
+        //Caffeinated\Widgets\WidgetsServiceProvider::class,
+        //Caffeinated\Shinobi\ShinobiServiceProvider::class, // For RBAC
+        //Collective\Html\HtmlServiceProvider::class, // For Watchtower Forms to function
+        //Smarch\Watchtower\WatchtowerServiceProvider::class, // For Watchtower
+
+        //GeneaLabs\LaravelCaffeine\LaravelCaffeineServiceProvider::class,
+        //Intervention\Image\ImageServiceProvider::class,
+        //Vinkla\Translator\TranslatorServiceProvider::class,
+
+        //yajra\Datatables\DatatablesServiceProvider::class,
+        //Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+
 
     ],
 
@@ -225,6 +250,11 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         /*
+        * Development Package Alias
+        */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        /*
         * Backpack Aliases...
         */
         'Alert' => Prologue\Alerts\Facades\Alert::class,
@@ -235,7 +265,18 @@ return [
        /*
         * Other Aliases...
         */
+        //'Flash' => Caffeinated\Flash\Facades\Flash::class,
+        'Module' => Caffeinated\Modules\Facades\Module::class,
+        //'Plugin' => Caffeinated\Plugins\Facades\Plugin::class,
+        'Theme' => Caffeinated\Themes\Facades\Theme::class,
+        //'Widget' => Caffeinated\Widgets\Facades\Widget::class,
+        //'Form'     => Collective\Html\FormFacade::class,  // required for Watchtower Forms
+        //'HTML'     => Collective\Html\HtmlFacade::class,   // required for Watchtower Forms
+        //'Shinobi'  => Caffeinated\Shinobi\Facades\Shinobi::class, // For RBAC functions
+        //'Watchtower'=> \Smarch\Watchtower\WatchtowerFacade::class, // not required, but available
 
+        //'Image' => Intervention\Image\Facades\Image::class,
+        'Datatables' => yajra\Datatables\Datatables::class,
     ],
 
 ];
