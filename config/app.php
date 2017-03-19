@@ -177,7 +177,7 @@ return [
         Backpack\BackupManager\BackupManagerServiceProvider::class,
         Backpack\LogManager\LogManagerServiceProvider::class,
         Backpack\Settings\SettingsServiceProvider::class,
-        Backpack\PageManager\PageManagerServiceProvider::class,
+        //Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\MenuCRUD\MenuCRUDServiceProvider::class,
 
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
@@ -200,8 +200,11 @@ return [
         //Vinkla\Translator\TranslatorServiceProvider::class,
 
         //yajra\Datatables\DatatablesServiceProvider::class,
-        //Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
+        Amranidev\Ajaxis\AjaxisServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Vinkla\Pusher\PusherServiceProvider::class,
 
     ],
 
